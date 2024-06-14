@@ -10,8 +10,11 @@ categories.workspace = true
 keywords.workspace = true
 
 [dependencies]
-iced.workspace = true
-iced.features = ["advanced"]
+#iced.workspace = true
+#iced.features = ["advanced"]
+iced="0.12.1"
+iced_aw = {version = "0.9.3", default-features = false, features = ["wrap", "number_input", "modal", "date_picker","icons","card","tab_bar","tabs","selection_list"]}
 
 [lints]
 workspace = true
+
