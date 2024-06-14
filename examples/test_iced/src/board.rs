@@ -65,9 +65,14 @@ impl Tab for BoardTab {
         .placeholder("Select a board")
         .width(Length::Shrink);
         let slot: NumberInput<'_, u8, BoardMessage, Theme, Renderer> =
-            number_input(9, 10, BoardMessage::SlotSelected)
-                .style(NumberInputStyles::Default)
-                .step(1);
+            number_input(
+                self.selected_slot.unwrap_or(9),
+                10,
+                BoardMessage::SlotSelected,
+            )
+            .style(NumberInputStyles::Default)
+            .step(1)
+            .min(1);
 
         let content: Element<'_, self::BoardMessage> = scrollable(
             container(
